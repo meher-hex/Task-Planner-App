@@ -1,0 +1,182 @@
+:root {
+    --main-bg: rgb(113, 9, 53);
+    --main: rgb(182, 64, 113);
+    --main-text: rgb(218, 88, 142);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg);
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planner {
+    background-color: rgb(255, 225, 238);
+    height: 150px;
+    width: 400px; /* center aligning does not take place if the width property is not set. */
+    color: var(--main-text);
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed var(--main);
+    border-radius: 15px;
+}
+
+.title {
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px 0 15px 0;
+  font-size: 26px;
+}
+
+.add-section {
+    height: 32px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.add-task {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.806);
+    outline: none;
+    padding-right: 40px;
+}
+
+.add-task::placeholder {
+    color: rgba(115, 80, 115, 0.441);
+}
+
+.add-task:focus {
+    outline: none;
+    color: var(--main-text);
+}
+
+.add {
+    background-color: rgb(209, 166, 231);
+    height: 100%;
+    width: 15%;
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add, .clear {
+    background-color: var(--main);
+    border: none;
+    border-radius: 30px;
+    color: var(--main-text);
+}
+
+.clear {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+*, p, input, button {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.task-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 12px 0px 12px;
+    margin: 5px 0px 5px 0px;
+}
+
+#none-text {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.task-list {
+    display: none;
+    padding: 0;
+    width: 100%;
+}
+
+.task-list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 2px 5px 2px;
+    gap: 10px;
+    width: 100%;
+}
+
+#list li .checkbox {
+    min-width: 18px;
+    height: 18px;
+    border: 2px solid rgb(137, 44, 138);
+    border-radius: 50%;
+    background: transparent;
+    appearance: none;
+    margin: 0;
+}
+
+#list li .checkbox:checked{
+    background-color: var(--main-text);
+}
+
+#list li .checkbox:checked::before {
+    content: '\2713';
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+#list li span {
+    flex: 1;
+    text-align: left;
+    word-wrap: break-word;
+    line-height: 15px;
+}
+
+.option {
+    margin-left: auto;
+}
+
+.delete-btn {
+    width: 30px;
+    height: 30px;
+    background: none;      /* already set */
+    border: none;          /* add this to remove default border */
+    cursor: pointer;       /* nice pointer on hover */
+    padding: 0;            /* remove any extra padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: gray;      /* optional: dim the text */
+}
+
